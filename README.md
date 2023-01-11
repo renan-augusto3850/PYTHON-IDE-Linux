@@ -8,6 +8,8 @@ VERSÃO DO PYTHON:
    
 DEPENDENCIAS:
 
+*Pip
+
 *PySimpleGUi
 
 *TKINTER

@@ -7,10 +7,6 @@ layout = [
     [sg.Button('Salvar',key='salvar'), sg.Button('Abrir projeto', key='abrir_arquivo')]
 ]
 
-layoutsec = [
-    [sg.Text('Seu projeto foi salvo no diretorio python-ide!(A menos que você tenha apertado o botão cancelar.) Feche esta janela.')]
-]
-
 def open_file() -> str:
     try:
         filename: str = sg.popup_get_file("Open File", no_window=True)
@@ -39,14 +35,11 @@ def salvar_pasta_em() -> str:
 
 janela = sg.Window('IDE PYTHON', layout)
 
-janelasec = sg.Window('Projeto salvo', layoutsec)
-
 while True:
     eventos, valores = janela.read()
     if eventos == sg.WINDOW_CLOSED:
         break
     if eventos == 'salvar':
       salvar_pasta_em()
-      janelasec.read()
     if eventos == 'abrir_arquivo':
         open_file()
